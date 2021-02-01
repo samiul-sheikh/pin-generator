@@ -6,7 +6,7 @@ function getPin() {
         return pin;
     }
     else {
-        console.log('shorter pin', pin);
+        // console.log('shorter pin', pin);
         return getPin();
     }
 }
@@ -16,3 +16,21 @@ function generatePin() {
     const pinInput = document.getElementById("pin");
     pinInput.value = getPin();
 }
+
+// handle pin button event
+// use event bubble to create pin
+const buttonContainer = document.getElementById('digits-container');
+buttonContainer.addEventListener('click', function (event) {
+    // console.log(event.target.innerText);
+    const digit = event.target.innerText;
+    if (isNaN(digit)) {
+        // handle backspace
+        // handle clear
+        console.log('handle non digit');
+    }
+    else {
+        // console.log(digit);
+        const typedInput = document.getElementById('typed-pin');
+        typedInput.value = typedInput.value + digit;
+    }
+})
