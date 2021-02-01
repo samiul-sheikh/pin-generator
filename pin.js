@@ -1,5 +1,5 @@
 // generate four digit pin
-function generatePin() {
+function getPin() {
     const randomPin = Math.random() * 10000;
     const pin = (randomPin + '').split('.')[0];
     if (pin.length === 4) {
@@ -7,6 +7,12 @@ function generatePin() {
     }
     else {
         console.log('shorter pin', pin);
-        return generatePin();
+        return getPin();
     }
+}
+
+// display generate pin
+function generatePin() {
+    const pinInput = document.getElementById("pin");
+    pinInput.value = getPin();
 }
