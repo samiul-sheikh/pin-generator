@@ -34,3 +34,15 @@ buttonContainer.addEventListener('click', function (event) {
         typedInput.value = typedInput.value + digit;
     }
 })
+
+// verify pin
+function verify() {
+    const actualPin = document.getElementById('pin').value;
+    const typedPin = document.getElementById('typed-pin').value;
+    if (actualPin === typedPin) {
+
+    }
+    else {
+
+    }
+}
