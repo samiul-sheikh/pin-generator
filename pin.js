@@ -26,7 +26,11 @@ buttonContainer.addEventListener('click', function (event) {
     if (isNaN(digit)) {
         // handle backspace
         // handle clear
-        console.log('handle non digit');
+        // console.log('handle non digit');
+        if (digit === 'C') {
+            const typedInput = document.getElementById('typed-pin');
+            typedInput.value = ' ';
+        }
     }
     else {
         // console.log(digit);
