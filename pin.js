@@ -13,7 +13,7 @@ function getPin() {
 
 // display generate pin
 function generatePin() {
-    const pinInput = document.getElementById("pin");
+    const pinInput = document.getElementById('pin');
     pinInput.value = getPin();
 }
 
@@ -36,13 +36,15 @@ buttonContainer.addEventListener('click', function (event) {
 })
 
 // verify pin
-function verify() {
+function verifyPin() {
     const actualPin = document.getElementById('pin').value;
     const typedPin = document.getElementById('typed-pin').value;
     if (actualPin === typedPin) {
-
+        const correct = document.getElementById('correct-pin');
+        correct.style.display = 'block';
     }
     else {
-
+        const correct = document.getElementById('incorrect-pin');
+        correct.style.display = 'block';
     }
 }
