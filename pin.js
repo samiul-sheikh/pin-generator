@@ -46,9 +46,13 @@ function verifyPin() {
     if (actualPin === typedPin) {
         const correct = document.getElementById('correct-pin');
         correct.style.display = 'block';
+        const incorrect = document.getElementById('incorrect-pin');
+        incorrect.style.display = 'none';
     }
     else {
-        const correct = document.getElementById('incorrect-pin');
-        correct.style.display = 'block';
+        const correct = document.getElementById('correct-pin');
+        correct.style.display = 'none';
+        const incorrect = document.getElementById('incorrect-pin');
+        incorrect.style.display = 'block';
     }
 }
