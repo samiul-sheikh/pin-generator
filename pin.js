@@ -6,7 +6,6 @@ function getPin() {
         return pin;
     }
     else {
-        // console.log('shorter pin', pin);
         return getPin();
     }
 }
@@ -21,19 +20,16 @@ function generatePin() {
 // use event bubble to create pin
 const buttonContainer = document.getElementById('digits-container');
 buttonContainer.addEventListener('click', function (event) {
-    // console.log(event.target.innerText);
     const digit = event.target.innerText;
     if (isNaN(digit)) {
         // handle backspace
         // handle clear
-        // console.log('handle non digit');
         if (digit === 'C') {
             const typedInput = document.getElementById('typed-pin');
             typedInput.value = ' ';
         }
     }
     else {
-        // console.log(digit);
         const typedInput = document.getElementById('typed-pin');
         typedInput.value = typedInput.value + digit;
     }
@@ -44,15 +40,16 @@ function verifyPin() {
     const actualPin = document.getElementById('pin').value;
     const typedPin = document.getElementById('typed-pin').value;
     if (actualPin === typedPin) {
-        const correct = document.getElementById('correct-pin');
-        correct.style.display = 'block';
-        const incorrect = document.getElementById('incorrect-pin');
-        incorrect.style.display = 'none';
+        displayMatchResult('block', 'none');
     }
     else {
-        const correct = document.getElementById('correct-pin');
-        correct.style.display = 'none';
-        const incorrect = document.getElementById('incorrect-pin');
-        incorrect.style.display = 'block';
+        displayMatchResult('none', 'block');
     }
+}
+
+function displayMatchResult(correctStatus, incorrectStatus) {
+    const correct = document.getElementById('correct-pin');
+    correct.style.display = correctStatus;
+    const incorrect = document.getElementById('incorrect-pin');
+    incorrect.style.display = incorrectStatus;
 }
